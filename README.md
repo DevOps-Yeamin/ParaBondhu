@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ParaBondhu (পাড়াবন্ধু) 🇧🇩
 
 > **Bangladesh-First Community & Opportunity Platform**  
@@ -176,4 +175,3 @@ This project is licensed under the MIT License. Developed for the people of Bang
 =======
 # ParaBondhu
 Your Community, Your Opportunities
->>>>>>> 3d688317e3fb279412bcecd0e86bac6dc427b552
