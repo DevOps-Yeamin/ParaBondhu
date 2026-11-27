@@ -1,0 +1,21 @@
+from backend.app.models.models import (
+    User,
+    TrafficReport,
+    TrafficVerification,
+    NeighborItem,
+    NeighborLoan,
+    NeighborAssistance,
+    KhunjeDaoItem,
+    KhunjeDaoClaim,
+    LineLessProvider,
+    LineLessQueue,
+    LineLessToken,
+    EasyAccessSpot,
+    EasyAccessReview,
+    ProbashiJob,
+    ProbashiGuide,
+    SkillCourse,
+    WorkHubJob,
+    WorkHubApplication,
+    Notification
+)

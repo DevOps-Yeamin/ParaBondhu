@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  # PostgreSQL with PostGIS extension for spatial queries
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: parabondhu_db
+    restart: always
+    environment:
+      POSTGRES_USER: parabondhu_user
+      POSTGRES_PASSWORD: parabondhu_password
+      POSTGRES_DB: parabondhu
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U parabondhu_user -d parabondhu"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: parabondhu_backend
+    restart: always
+    environment:
+      DATABASE_URL: postgresql://parabondhu_user:parabondhu_password@db:5432/parabondhu
+      SECRET_KEY: parabondhu-production-secret-key-change-in-prod
+      API_V1_STR: /api/v1
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # React Frontend Service
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: parabondhu_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
