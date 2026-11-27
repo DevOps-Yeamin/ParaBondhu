@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ParaBondhu (পাড়াবন্ধু) 🇧🇩
 
 > **Bangladesh-First Community & Opportunity Platform**  
@@ -172,3 +173,7 @@ Tests cover root health endpoints, JWT authentication flows, traffic alert submi
 
 ## 📄 License
 This project is licensed under the MIT License. Developed for the people of Bangladesh and the global diaspora.
+=======
+# ParaBondhu
+Your Community, Your Opportunities
+>>>>>>> 3d688317e3fb279412bcecd0e86bac6dc427b552
